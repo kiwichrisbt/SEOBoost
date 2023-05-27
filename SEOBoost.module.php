@@ -184,10 +184,10 @@ class SEOBoost extends \CMSModule {
       $route = new CmsRoute( '/^sitemap-*[0-9a-zA-Z-_]*\.xml$/', 'SEOBoost', $defaults );
       cms_route_manager::add_static($route);
       // robots.txt
-      $route = new CmsRoute( 'robots.txt', 'SEOBoost', $defaults );
+      $route = new CmsRoute( '/^robots.txt$/', 'SEOBoost', $defaults );
       cms_route_manager::add_static($route);
       // feed-news.rss
-      $route = new CmsRoute( 'feeds-news.rss', 'SEOBoost', $defaults );
+      $route = new CmsRoute( '/^feeds-news.rss$/', 'SEOBoost', $defaults );
       cms_route_manager::add_static($route);
    }
 
