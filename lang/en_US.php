@@ -242,6 +242,13 @@ EOD;
 
 $lang['changelog'] = <<<'EOD'
 
+<h3>Version 1.1 - 27May23</h3>
+<ul>
+   <li>sitemaps bug fix - it works correctly when RewriteBase is used e.g. install in sub-dir</li>
+</ul>
+<br>
+
+
 <h3>Version 1.0.3 - 06Feb23</h3>
 <ul>
    <li>actual bug fix for saving instagram setting after upgrade</li>

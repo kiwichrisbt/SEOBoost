@@ -36,7 +36,7 @@ class SEOBoost extends \CMSModule {
 
    private static $_seoboostSitemap = 0;
 
-   public function GetVersion() { return '1.0.3'; }
+   public function GetVersion() { return '1.1'; }
    public function GetFriendlyName() { return $this->GetPreference('customModuleName', 'SEOBoost'); }
    public function GetAdminDescription() { return $this->Lang('admindescription'); }
    public function IsPluginModule() { return TRUE; }
@@ -110,6 +110,7 @@ class SEOBoost extends \CMSModule {
    //***********************************************************************************************
    //
    //***********************************************************************************************
+
       $supported_sitemaps = [ // name [module, url, default_active]
          'index' => ['SEOBoost', 'sitemap.xml', 1],
          'pages' => ['Navigator', 'sitemap-pages.xml', 1],
@@ -183,10 +184,10 @@ class SEOBoost extends \CMSModule {
       $route = new CmsRoute( '/^sitemap-*[0-9a-zA-Z-_]*\.xml$/', 'SEOBoost', $defaults );
       cms_route_manager::add_static($route);
       // robots.txt
-      $route = new CmsRoute( '/^robots.txt$/', 'SEOBoost', $defaults );
+      $route = new CmsRoute( 'robots.txt', 'SEOBoost', $defaults );
       cms_route_manager::add_static($route);
       // feed-news.rss
-      $route = new CmsRoute( '/^feeds-news.rss$/', 'SEOBoost', $defaults );
+      $route = new CmsRoute( 'feeds-news.rss', 'SEOBoost', $defaults );
       cms_route_manager::add_static($route);
    }
 

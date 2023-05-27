@@ -25,15 +25,14 @@ if ( \CMSMS\HookManager::in_hook('Core::ContentPostRender')==false ) {
 
 
 // load all settings from db
-$requestURI = trim($_SERVER["REQUEST_URI"], '/');
-
+$basename = basename($_SERVER["REQUEST_URI"]);
 $query = new SEOBoostSitemapQuery;
 $res = $query->GetMatches();
 
 $sitemapName = '';
 if ($res) {
    foreach ($res as $sitemap) {
-      if ($requestURI==$sitemap->url && $sitemap->active) {
+      if ($basename==$sitemap->url && $sitemap->active) {
          $sitemapName = $sitemap->name;
          $sitemapModule = $sitemap->module;
          $sitemapURL = $sitemap->url;
