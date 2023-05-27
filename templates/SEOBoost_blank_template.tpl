@@ -1,0 +1,1 @@
+{* SEOBoost_blank_template - v1.0 - 02Sep16 *}{content wysiwyg=false oneline=1}
