@@ -1,4 +1,6 @@
-{* pageVars_template.tpl 
+{* pageVars_template.tpl - v1.0 - 09Feb19
+
+   - v1.0 - 09Feb19 - moved to smarty template
 
 ********************************************************************************************}{strip}
 
@@ -11,7 +13,7 @@
 {/if}
 
 {if !empty($pageVars.email)}{* obfusicated email link *}
-   {$pageVars.emailLink="{mailto address=$pageVars.email encode='javascript' extra='class="email" itemprop="email"'}" scope=global}
+   {$pageVars.emailLink="{mailto address=$pageVars.email encode='javascript' extra='class=\"email\" itemprop=\"email\"'}" scope=global}
 {/if}
 
 {* add microdata fields *}
