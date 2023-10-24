@@ -36,7 +36,7 @@ class SEOBoost extends \CMSModule {
 
    private static $_seoboostSitemap = 0;
 
-   public function GetVersion() { return '1.3.3'; }
+   public function GetVersion() { return '1.3.4'; }
    public function GetFriendlyName() { return $this->GetPreference('customModuleName', 'SEOBoost'); }
    public function GetAdminDescription() { return $this->Lang('admindescription'); }
    public function IsPluginModule() { return TRUE; }

@@ -250,6 +250,13 @@ EOD;
 $lang['changelog'] = <<<'EOD'
 
 
+<h3>Version 1.3.4 - 24Oct23</h3>
+<ul>
+   <li>minor pageVars emailLink bug - fixed</li>
+</ul>
+<br>
+
+
 <h3>Version 1.3.3 - 29Aug23</h3>
 <ul>
    <li>minor sitemap bug - leading characters sometime stripped of sitemap names</li>
