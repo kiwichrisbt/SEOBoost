@@ -17,6 +17,9 @@ $this->SetPreference('customModuleName', !empty($params['input_customModuleName'
 $this->SetPreference('adminSection', isset($params['input_adminSection']) ? $params['input_adminSection'] : 'content');
 $this->SetPreference('useSearchable', isset($params['input_useSearchable']) ? (bool)$params['input_useSearchable'] : false);
 
+// Save Options Tab - Bulk Edit Content Settings
+$this->set_bulk_edit_fields($params['bulk_edit_fields']  ?? []);
+$this->set_cm_add_in_fields($params['cm_add_in_fields'] ?? []);
 
 // Touch menu cache files
 if (version_compare(CMS_VERSION, '1.99-alpha0', '<')) {
