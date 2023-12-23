@@ -120,11 +120,17 @@ $lang['id'] = 'Page';
 $lang['title_bulk_edit_content'] = 'Bulk Edit Content';
 $lang['title_bulk_edit_content_settings'] = 'Bulk Edit Content Settings';
 $lang['title_page_field'] = 'Page field';
+$lang['title_page_fields'] = 'Page fields';
 $lang['title_editable'] = 'Editable';
 $lang['title_size'] = 'Size';
 $lang['title_recommended_length'] = 'Recommended length';
 $lang['title_use_addin'] = 'Use Add-in';
 $lang['title_content_manager_field'] = 'Content Manager field';
+$lang['title_bulk_edit_layout'] = 'Select layout for Bulk Edit Content';
+$lang['title_layout_table'] = 'Table';
+$lang['title_layout_stacked'] = 'Stacked';
+$lang['title_layout_stacked_with_title'] = 'Stacked with title column';
+
 
 $lang['help_editable'] = 'If set to editable, the field will be available for bulk editing. If not set to editable, the field will be display only.';
 $lang['help_size'] = 'optional - specifies the width of the input, in characters.';
@@ -307,6 +313,13 @@ EOD;
 #########  ###    ###  ###    ###  ###    ###  #########  ########  ######### #########  #########
 
 $lang['changelog'] = <<<'EOD'
+
+
+<h3>Version 1.4.1 - 22Nov23</h3>
+<ul>
+   <li>Added alternative layout options for 'Bulk Edit Content' - can now show fields in formats: Table, Stacked, Stacked with Title Column.</li>
+</ul>
+<br>
 
 
 <h3>Version 1.4 - 18Nov23</h3>

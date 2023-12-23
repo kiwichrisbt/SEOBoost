@@ -143,7 +143,8 @@ echo $this->StartTabContent();
 
         $tpl->assign( 'bulk_edit_fields', $this->get_bulk_edit_fields() );
         $tpl->assign( 'cm_add_in_fields', $this->get_cm_add_in_fields() );
-        
+        $tpl->assign( 'bulk_edit_layout', $this->GetPreference('bulkEditLayout', 'table') );
+
         $tpl->display();
     echo $this->EndTab();
 

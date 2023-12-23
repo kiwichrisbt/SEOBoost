@@ -181,6 +181,7 @@ try {
     $tpl->assign('default_field_size', $this::DEFAULT_BULK_EDIT_FIELD_SIZE);
     $tpl->assign('core_fields', $this::BULK_EDIT_CORE_FIELDS);
     $tpl->assign('show_alias_warning', $show_alias_warning);
+    $tpl->assign('layout', $this->GetPreference('bulkEditLayout', 'table'));
     $tpl->display();
 
 } catch( \Exception $e ) {

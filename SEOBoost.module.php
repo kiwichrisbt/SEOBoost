@@ -33,7 +33,7 @@ $fn = cms_join_path(__DIR__,'function.social.php'); require_once($fn);
 class SEOBoost extends \CMSModule {
 
     const USE_PERM = 'use_seoboost';
-    const MODULE_VERSION = '1.4';
+    const MODULE_VERSION = '1.4.1';
 
     const BULK_EDIT_CORE_FIELDS = [
             'core_content_name',     // these are in the content table
@@ -48,6 +48,11 @@ class SEOBoost extends \CMSModule {
         'length' => ''
     ];
     const DEFAULT_BULK_EDIT_FIELD_SIZE = 50;
+    const BULK_EDIT_LAYOUTS = [
+        'table',
+        'stacked',
+        'stacked_with_title'
+    ];
     const CM_ADD_IN_FIELDS = [
         'core_content_name' => [
             'editable' => false,
@@ -351,7 +356,7 @@ class SEOBoost extends \CMSModule {
                 $bulk_edit_fields[$row_id]['is_core_field'] = in_array($bulk_edit_fields[$row_id]['field'], self::BULK_EDIT_CORE_FIELDS);
             }
         }
-        return $bulk_edit_fields;
+        return array_values($bulk_edit_fields); // re-index array numerically
     }
 
 

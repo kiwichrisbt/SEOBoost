@@ -118,3 +118,15 @@ input.non-editable {background-color:transparent; border:0; box-shadow:none; col
     position:absolute; right:0; width:1.2rem; height:1.2rem; line-height:1.2rem; text-align:center; 
     border-radius:50%; background-color:#838383; cursor:pointer; text-shadow:none; pointer-events:none; 
     font-weight:300;}
+
+
+#bulk_edit_content * {box-sizing:border-box;}
+#bulk_edit_content .text-only {padding-top:6px; padding-bottom:6px; text-wrap:nowrap;}
+/* #bulk_edit_content .align-top {padding-top:9px; vertical-align:top;} */
+#bulk_edit_content .field-label {width:240px; font-weight:600;}
+/* #bulk_edit_content .field-values {overflow:hidden;} */
+
+#bulk_edit_content tbody.row1 {background:#f2f2f2;}
+#bulk_edit_content tbody.row2 {background:#fafafa;}
+#bulk_edit_content tbody.row1:hover, #bulk_edit_content tbody.row2:hover, 
+    #bulk_edit_content tbody.row1:hover, #bulk_edit_content tbody.row2:hover {background:#ddd;}

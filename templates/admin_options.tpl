@@ -84,6 +84,18 @@
         <div class="seoboost_repeater_footer">
             <button id="bulk-edit-repeater-add" class="seoboost-repeater-add seoboost-btn seoboost-btn-default" data-repeater="#bulk-edit-repeater" title="Add line" role="button" aria-disabled="false"><span class="seoboost-icon-plus"></span>&nbsp;&nbsp;{$mod->Lang('add_field')}</button>
         </div>
+
+        <div class="pageoverflow">
+            <p class="pagetext">{$mod->Lang('title_bulk_edit_layout')}:</p>
+            
+            <p class="pageinput">
+                <select name="{$actionid}bulk_edit_layout">
+                {foreach $mod::BULK_EDIT_LAYOUTS as $layout}
+                    <option value="{$layout}" {if $bulk_edit_layout==$layout}selected{/if}>{$mod->Lang("title_layout_$layout")}</option>
+                {/foreach}
+                </select>
+            </p>
+        </div>
     </fieldset>
 
 
