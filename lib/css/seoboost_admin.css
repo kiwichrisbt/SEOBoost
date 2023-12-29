@@ -124,9 +124,14 @@ input.non-editable {background-color:transparent; border:0; box-shadow:none; col
 #bulk_edit_content .text-only {padding-top:6px; padding-bottom:6px; text-wrap:nowrap;}
 /* #bulk_edit_content .align-top {padding-top:9px; vertical-align:top;} */
 #bulk_edit_content .field-label {width:240px; font-weight:600;}
+#bulk_edit_content.table-stacked {display:block; width:auto;}
 /* #bulk_edit_content .field-values {overflow:hidden;} */
 
-#bulk_edit_content tbody.row1 {background:#f2f2f2;}
-#bulk_edit_content tbody.row2 {background:#fafafa;}
+#bulk_edit_content tbody.row1 {padding:5px 0; background:#f2f2f2;}
+#bulk_edit_content tbody.row2 {padding:5px 0; background:#fafafa;}
 #bulk_edit_content tbody.row1:hover, #bulk_edit_content tbody.row2:hover, 
     #bulk_edit_content tbody.row1:hover, #bulk_edit_content tbody.row2:hover {background:#ddd;}
+
+#bulk_edit_content tr.row1 td, #bulk_edit_content tr.row2 td {padding:5px;}
+#bulk_edit_content tbody.row1 tr td, #bulk_edit_content tbody.row2 tr td {padding:5px;
+    border-bottom:1px solid #0000000f;}

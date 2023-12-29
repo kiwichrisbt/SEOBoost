@@ -52,7 +52,7 @@ function SetPageVars ($params) {
             DIRECTORY_SEPARATOR.$curpage->GetPropertyValue('image');
     }
 
-   if ( $mod->GetPreference('useSearchable', true) ) {
+   if ( is_object($mod) && $mod->GetPreference('useSearchable', true) ) {
       $pageVars['searchable'] = $curpage->getPropertyValue('searchable');
    }
 

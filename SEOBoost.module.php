@@ -33,7 +33,7 @@ $fn = cms_join_path(__DIR__,'function.social.php'); require_once($fn);
 class SEOBoost extends \CMSModule {
 
     const USE_PERM = 'use_seoboost';
-    const MODULE_VERSION = '1.4.1';
+    const MODULE_VERSION = '1.4.2';
 
     const BULK_EDIT_CORE_FIELDS = [
             'core_content_name',     // these are in the content table
@@ -51,7 +51,8 @@ class SEOBoost extends \CMSModule {
     const BULK_EDIT_LAYOUTS = [
         'table',
         'stacked',
-        'stacked_with_title'
+        'stacked_with_inline_titles',
+        'stacked_with_title_column'
     ];
     const CM_ADD_IN_FIELDS = [
         'core_content_name' => [

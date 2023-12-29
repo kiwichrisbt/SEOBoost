@@ -40,6 +40,7 @@
     </div>
 </div>
 
+
 {if !empty($bulk_edit_fields) && $layout=='table'}
 <div class="table-responsive">
     <table id="bulk_edit_content" class="pagetable">
@@ -68,6 +69,37 @@
 {elseif !empty($bulk_edit_fields) && $layout=='stacked'}
 {$field_count=$bulk_edit_fields|count}{* count fields *}
 <div class="table-stacked">
+    <table id="bulk_edit_content" class="pagetable table-stacked">
+        <thead>
+            <tr>
+                <th>&nbsp;</th> 
+                <th>{$mod->Lang('title_page_fields')}</th>
+            </tr>
+        </thead>
+    {foreach $contentlist as $row}
+        <tbody class="{if $row@index is even}row1{else}row2{/if}">
+        {foreach $bulk_edit_fields as $field}
+            <tr>
+            {if $field@index==0}
+                <td rowspan="{$field_count}" class="text-only">
+                    {$row.id}
+                </td>
+            {/if}        
+                <td>
+                    <span class="field-label">{if !empty($field.is_core_field)}{$mod->Lang($field.field)}{else}{$field.field}{/if}:</span>
+                    <span class="field-values">{seoboost_output_bulk_edit_field field=$field row=$row}</span>
+                </td>
+            </tr>
+        {/foreach}
+        </tbody>
+    {/foreach}
+    </table>
+</div>
+
+
+{elseif !empty($bulk_edit_fields) && $layout=='stacked_with_inline_titles'}
+{$field_count=$bulk_edit_fields|count}{* count fields *}
+<div class="table-stacked-with-inline-titles">
     <table id="bulk_edit_content" class="pagetable">
         <thead>
             <tr>
@@ -99,10 +131,10 @@
 </div>
 
 
-{elseif !empty($bulk_edit_fields) && $layout=='stacked_with_title'}
+{elseif !empty($bulk_edit_fields) && $layout=='stacked_with_title_column'}
 {$title_field=$bulk_edit_fields|array_shift}{* first field as title_field & removed from $bulk_edit_fields *}
 {$field_count=$bulk_edit_fields|count}{* count remaining fields *}
-<div class="table-stacked-with-title">
+<div class="table-stacked-with-title-column">
     <table id="bulk_edit_content" class="pagetable">
         <thead>
             <tr>

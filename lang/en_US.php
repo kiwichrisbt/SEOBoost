@@ -129,7 +129,9 @@ $lang['title_content_manager_field'] = 'Content Manager field';
 $lang['title_bulk_edit_layout'] = 'Select layout for Bulk Edit Content';
 $lang['title_layout_table'] = 'Table';
 $lang['title_layout_stacked'] = 'Stacked';
-$lang['title_layout_stacked_with_title'] = 'Stacked with title column';
+$lang['title_layout_stacked_with_title'] = 'Stacked with title';
+$lang['title_layout_stacked_with_inline_titles'] = 'Stacked with inline titles';
+$lang['title_layout_stacked_with_title_column'] = 'Stacked with title column';
 
 
 $lang['help_editable'] = 'If set to editable, the field will be available for bulk editing. If not set to editable, the field will be display only.';
@@ -315,14 +317,21 @@ EOD;
 $lang['changelog'] = <<<'EOD'
 
 
-<h3>Version 1.4.1 - 22Nov23</h3>
+<h3>Version 1.4.2 - 28Dec23</h3>
+<ul>
+   <li>Added another alternative layout option for 'Bulk Edit Content' - can now show fields in formats: Table, Stacked, Stacked with inline titles, Stacked with title column.</li>
+</ul>
+<br>
+
+
+<h3>Version 1.4.1 - 22Dec23</h3>
 <ul>
    <li>Added alternative layout options for 'Bulk Edit Content' - can now show fields in formats: Table, Stacked, Stacked with Title Column.</li>
 </ul>
 <br>
 
 
-<h3>Version 1.4 - 18Nov23</h3>
+<h3>Version 1.4 - 18Dec23</h3>
 <ul>
    <li>Added 'Bulk Edit Content' functionality - select multiple fields that can be edited by selecting multiple pages in the Content Manager and using the 'Bulk Edit Content' option from the bulk content operations.</li>
    <li>Added 'Content Manager Add-ins' functionality - optionally set input size and recommended length with character count and progress bar for Page Title, Description, or Menu Text.</li>
