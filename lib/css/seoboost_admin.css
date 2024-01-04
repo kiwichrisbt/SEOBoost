@@ -132,6 +132,12 @@ input.non-editable {background-color:transparent; border:0; box-shadow:none; col
 #bulk_edit_content tbody.row1:hover, #bulk_edit_content tbody.row2:hover, 
     #bulk_edit_content tbody.row1:hover, #bulk_edit_content tbody.row2:hover {background:#ddd;}
 
-#bulk_edit_content tr.row1 td, #bulk_edit_content tr.row2 td {padding:5px;}
-#bulk_edit_content tbody.row1 tr td, #bulk_edit_content tbody.row2 tr td {padding:5px;
-    border-bottom:1px solid #0000000f;}
+#bulk_edit_content tr.row1 td, #bulk_edit_content tr.row2 td {
+    padding:2px 5px; border-bottom:1px solid #ddd;}
+#bulk_edit_content tbody.row1 tr td, #bulk_edit_content tbody.row2 tr td {
+    padding:2px 5px; border-bottom:1px solid #0000000f;}
+#bulk_edit_content tbody.row1 tr:last-child td, #bulk_edit_content tbody.row2 tr:last-child td {
+    padding-bottom:15px; border-bottom:1px solid #ddd;}
+#bulk_edit_content tbody.row1 tr:first-child td, #bulk_edit_content tbody.row2 tr:first-child td {
+    padding-top:10px;}
+

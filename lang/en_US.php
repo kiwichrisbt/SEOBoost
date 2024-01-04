@@ -317,7 +317,7 @@ EOD;
 $lang['changelog'] = <<<'EOD'
 
 
-<h3>Version 1.4.2 - 28Dec23</h3>
+<h3>Version 1.4.3 - 29Dec23</h3>
 <ul>
    <li>Added another alternative layout option for 'Bulk Edit Content' - can now show fields in formats: Table, Stacked, Stacked with inline titles, Stacked with title column.</li>
 </ul>
