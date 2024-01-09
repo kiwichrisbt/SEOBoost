@@ -33,7 +33,7 @@ $fn = cms_join_path(__DIR__,'function.social.php'); require_once($fn);
 class SEOBoost extends \CMSModule {
 
     const USE_PERM = 'use_seoboost';
-    const MODULE_VERSION = '1.4.3';
+    const MODULE_VERSION = '1.4.4';
 
     const BULK_EDIT_CORE_FIELDS = [
             'core_content_name',     // these are in the content table

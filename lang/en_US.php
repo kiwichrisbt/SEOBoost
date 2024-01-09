@@ -317,6 +317,13 @@ EOD;
 $lang['changelog'] = <<<'EOD'
 
 
+<h3>Version 1.4.4 - 09Jan24</h3>
+<ul>
+   <li>Bug Fix - stopped pageVars outputting spaces before any frontend output - this also stopped the sitemaps outputting valid xml</li>
+</ul>
+<br>
+
+
 <h3>Version 1.4.3 - 29Dec23</h3>
 <ul>
    <li>Added another alternative layout option for 'Bulk Edit Content' - can now show fields in formats: Table, Stacked, Stacked with inline titles, Stacked with title column.</li>
