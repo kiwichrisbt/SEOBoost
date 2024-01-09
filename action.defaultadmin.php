@@ -113,33 +113,40 @@ echo $this->StartTabContent();
 
 
 
-   echo $this->StartTab("options");
-      $tpl = $smarty->CreateTemplate( $this->GetTemplateResource('admin_options.tpl'), null, null, $smarty );
-      $tpl->assign('title_customModuleName', $this->Lang('title_customModuleName'));
-      $tpl->assign('input_customModuleName', $this->CreateInputText($id, 'input_customModuleName',$this->GetPreference('customModuleName',''),50,255));
-      $tpl->assign('title_adminSection', $this->Lang('title_adminSection'));
-      $tpl->assign('input_adminSection', $this->CreateInputDropdown($id, 'input_adminSection',
-         array(lang('main') => 'main',
-               lang('content') => 'content',
-               lang('layout') => 'layout',
-               lang('usersgroups') => 'usersgroups',
-               lang('extensions') => 'extensions',
-               lang('admin') => 'siteadmin',
-               lang('myprefs') => 'myprefs'),
-         -1,
-         $this->GetPreference('adminSection', 'content')
-      ));
+    echo $this->StartTab("options");
+        $tpl = $smarty->CreateTemplate( $this->GetTemplateResource('admin_options.tpl'), null, null, $smarty );
+        $tpl->assign('bulk_edit_core_fields', $this::BULK_EDIT_CORE_FIELDS);
+        $db = \cms_utils::get_db();
+        $sql = 'SELECT prop_name FROM '.CMS_DB_PREFIX.'content_props GROUP BY prop_name ORDER BY prop_name';
+        $custom_fields = $db->GetCol($sql);
+        $tpl->assign('bulk_edit_custom_fields', $custom_fields);
+
+        $tpl->assign('title_customModuleName', $this->Lang('title_customModuleName'));
+        $tpl->assign('input_customModuleName', $this->CreateInputText($id, 'input_customModuleName',$this->GetPreference('customModuleName',''),50,255));
+        $tpl->assign('title_adminSection', $this->Lang('title_adminSection'));
+        $tpl->assign('input_adminSection', $this->CreateInputDropdown($id, 'input_adminSection',
+            array(lang('main') => 'main',
+                lang('content') => 'content',
+                lang('layout') => 'layout',
+                lang('usersgroups') => 'usersgroups',
+                lang('extensions') => 'extensions',
+                lang('admin') => 'siteadmin',
+                lang('myprefs') => 'myprefs'),
+            -1,
+            $this->GetPreference('adminSection', 'content')
+        ));
 
 
-      $tpl->assign( 'title_useSearchable', $this->Lang('title_useSearchable') );
-      $tpl->assign( 'input_useSearchable', $this->CreateInputCheckbox($id, 'input_useSearchable', true, $this->GetPreference('useSearchable', true)) );
-      $tpl->assign( 'info_useSearchable', $this->Lang('info_useSearchable') );
+        $tpl->assign( 'title_useSearchable', $this->Lang('title_useSearchable') );
+        $tpl->assign( 'input_useSearchable', $this->CreateInputCheckbox($id, 'input_useSearchable', true, $this->GetPreference('useSearchable', true)) );
+        $tpl->assign( 'info_useSearchable', $this->Lang('info_useSearchable') );
 
+        $tpl->assign( 'bulk_edit_fields', $this->get_bulk_edit_fields() );
+        $tpl->assign( 'cm_add_in_fields', $this->get_cm_add_in_fields() );
+        $tpl->assign( 'bulk_edit_layout', $this->GetPreference('bulkEditLayout', 'table') );
 
-      $tpl->assign('startform', $this->CreateFormStart( $id, 'admin_save_options', $returnid, 'post', 'multipart/form-data'));
-      $tpl->assign('endform', $this->CreateFormEnd());
-      $tpl->display();
-   echo $this->EndTab();
+        $tpl->display();
+    echo $this->EndTab();
 
 
 echo $this->EndTabContent();

@@ -12,6 +12,7 @@ $lang['friendlyname'] = 'SEOBoost';
 $lang['admindescription'] = 'Provides the functions to Search Engine Optimise your website.';
 $lang['need_permission'] = 'You need permission to use this module';
 
+
 # Install / Uninstall
 $lang['install_msg'] = "You have successfully installed the 'SEOBoost' module.";
 $lang['install_BIExtensions_error'] = "Module 'BIExtensions' needs to be uninstalled before installing 'SEOBoost'";
@@ -96,6 +97,8 @@ $lang['tab_options'] = 'Options';
 $lang['title_customModuleName'] = 'Custom Module Name';
 $lang['title_adminSection'] = 'Module Admin Section';
 $lang['title_useSearchable'] = 'Use Searchable';
+$lang['title_custom_module_settings'] = 'Custom Module Settings';
+$lang['title_contentmanager_add_ins'] = 'Content Manager Add-ins';
 $lang['info_useSearchable'] = "Use page setting 'This page is searchable' to determine if pages are set to 'robots no-index', or not";
 
 
@@ -106,6 +109,53 @@ $lang['type_Robots_txt'] = 'Robots.txt';
 $lang['type_Metadata'] = 'Metadata';
 $lang['type_RSS'] = 'RSS';
 $lang['template_no_default'] = 'No default template found';
+
+
+
+# Bulk Edit Content
+$lang['add_field'] = 'Add field';
+$lang['bulk_edit_content'] = 'Bulk Edit Content';
+$lang['error_nocontentselected'] = 'No content was selected';
+$lang['id'] = 'Page';
+$lang['title_bulk_edit_content'] = 'Bulk Edit Content';
+$lang['title_bulk_edit_content_settings'] = 'Bulk Edit Content Settings';
+$lang['title_page_field'] = 'Page field';
+$lang['title_page_fields'] = 'Page fields';
+$lang['title_editable'] = 'Editable';
+$lang['title_size'] = 'Size';
+$lang['title_recommended_length'] = 'Recommended length';
+$lang['title_use_addin'] = 'Use Add-in';
+$lang['title_content_manager_field'] = 'Content Manager field';
+$lang['title_bulk_edit_layout'] = 'Select layout for Bulk Edit Content';
+$lang['title_layout_table'] = 'Table';
+$lang['title_layout_stacked'] = 'Stacked';
+$lang['title_layout_stacked_with_title'] = 'Stacked with title';
+$lang['title_layout_stacked_with_inline_titles'] = 'Stacked with inline titles';
+$lang['title_layout_stacked_with_title_column'] = 'Stacked with title column';
+
+
+$lang['help_editable'] = 'If set to editable, the field will be available for bulk editing. If not set to editable, the field will be display only.';
+$lang['help_size'] = 'optional - specifies the width of the input, in characters.';
+$lang['help_recommended_length'] = 'optional - shows an overlay of the character count vs recommended length and a progress bar underneath the input field. If the character count exceeds the recommended length the count & progress bar will be shown in red.';
+
+$lang['core_page_fields'] = "--- core page fields ---";
+$lang['custom_page_fields'] = "--- custom page fields ---";
+$lang['select_field'] = '--- select field to edit ---';
+$lang['core_content_name'] = 'Page Title';
+$lang['core_content_alias'] = 'Alias';
+$lang['core_menu_text'] = 'Menu Text';
+$lang['core_titleattribute'] = 'Page Description (Title Attribute)';
+$lang['current_value'] = 'current value';
+$lang['changes_saved'] = 'Changes saved are:';
+$lang['warn_edit_alias'] = '<p><strong>Warning - editing Alias:</strong> This operation can change the alias of multiple pages. It could break links to existing pages. You may need to clear the system cache after completing this operation. Enter a new alias into each row, or to have the system automatically generate a new alias clear the alias field.</p>';
+$lang['warning_no_fields_selected'] = 'Warning - no fields are selected. Please use SEOBoost > Options tab to select fields to edit.';
+
+
+### THESE NEED UPDATING!!!!
+$lang['new_alias'] = 'New Alias';
+$lang['old_alias'] = 'Old Alias';
+$lang['clear_all'] = 'Clear All';
+$lang['new'] = 'new';
 
 
 
@@ -128,7 +178,7 @@ $lang['help'] = <<<'EOD'
 <h3 name="">What does this do?</h3>
 <p>'SEOBoost' provides the functionality to improve the Search Engine Optimisation your website.</p><br>
 <p>Why this module: We believe that SEO is a fundamental part of any website. This module is designed to make this as easy as possible. So that time spent on SEO can be as value adding as possible. Plus we like to make life simpler for ourselves - e.g. by automatically generating sitemaps, robots.txt &amp; RSS feeds, etc.</p><br>
-<p>This is a beta version with many additional features planned. Any released version should be suitable to use on a production site, (I will be). Please feel free to send me any feedback, comments or requests. Contact details below.</p>
+<p>Please feel free to send me any feedback, comments or requests. Contact details below.</p>
 <br>
 
 
@@ -160,7 +210,7 @@ $lang['help'] = <<<'EOD'
 
 
 <h3>googleAnalytics</h3>
-<p>Outputs Google Analytics tracking code, using the Universal Analytics, version of GA.</p>
+<p>Outputs Google Analytics tracking code, using either GA4 or the older Universal Analytics version.</p>
 <p>In the SEOBoost > Company Info tab - add 'Google Analytics Account Code' into the provided field.</p>
 <p><strong>To use: </strong> add {googleAnalytics} tag just before the end <_/body_> tag.</p>
 <br>
@@ -212,16 +262,33 @@ $lang['help'] = <<<'EOD'
 
 
 
+<h3>Content Manager - Bulk Edit Content & Add-ins</h3>
+<p><strong>Bulk Edit Content</strong> - adds the 'Bulk Edit Content' option into Content Manager bulk content operations. Select any number of pages from the Content Manager that can have multiple fields edited across all the selected pages.</p>
+<p>The fields to be displayed and/or edited can be on the SEOBoost > Options tab. You can edit both a selection of core fields and custom fields, with the following options.
+    <ul>
+        <li>'Editable' - if set to editable, the field will be available for bulk editing. If not set to editable, the field will be display only.</li>
+        <li>'Size' - optional - specifies the width of the input, in characters.</li>
+        <li>'Recommended length' - optional - shows an overlay of the character count vs recommended length and a progress bar underneath the input field. If the character count exceeds the recommended length the count & progress bar will be shown in red.</li>
+    </ul>
+</p>
+<p><img src="../modules/SEOBoost/lib/images/seoboost_bulk_edit_content.jpg" alt="Bulk Edit Content" width="1020" height="auto" style="max-width:100%;"></p><br>
+<p><strong>Note: </strong>it is recommeded only to edit text input fields using 'Bulk Edit Content'. Other fields including checkboxes, radio buttons, selects, and more complex fields could easily have inappropriate values set and stop your website working as intended. Please exercise caution.</p>
+<br>
+<p><strong>Content Manager Add-ins</strong> - allows you to optionally change the display of fields when editing a Content Manager page. Set the input size and recommended length with character count and progress bar for Page Title, Description, or Menu Text fields.</p>
+<br>
+
+
+
 <h3>Support</h3>
 <p>As per the GPL licence, this software is provided as is. Please read the text of the license for the full disclaimer.
 The module author is not obligated to provide support for this code. However you might get support through the following:</p>
 <ul>
    <li>For support, first <strong>search</strong> the <a href="//forum.cmsmadesimple.org" target="_blank">CMS Made Simple Forum</a>, for issues with the module similar to those you are finding.</li>
-   <li>Then, if necessary, open a <strong>new forum topic</strong> to request help, with a thorough description of your issue, and steps to reproduce it.</li>
    <li>Contact me via the CMS Made Simple Slack channel @KiwiChris</li>
    <li>If you find a bug you can <a href="http://dev.cmsmadesimple.org/bug/list/1422" target="_blank">submit a Bug Report</a>.</li>
    <li>For any good ideas you can <a href="http://dev.cmsmadesimple.org/feature_request/list/1422" target="_blank">submit a Feature Request</a>.</li>
-   <li>If you found the Module useful - shout out to me on Twitter <a href="//twitter.com/KiwiChrisBT">@KiwiChrisBT</a></li>
+   <li>Or, open a <strong>new forum topic</strong> to request help, with a thorough description of your issue, and steps to reproduce it. Other members of the CMSMS community may help with suggestions.</li>
+
 </ul><br>
 
 
@@ -248,6 +315,35 @@ EOD;
 #########  ###    ###  ###    ###  ###    ###  #########  ########  ######### #########  #########
 
 $lang['changelog'] = <<<'EOD'
+
+
+<h3>Version 1.4.4 - 09Jan24</h3>
+<ul>
+   <li>Bug Fix - stopped pageVars outputting spaces before any frontend output - this also stopped the sitemaps outputting valid xml</li>
+</ul>
+<br>
+
+
+<h3>Version 1.4.3 - 29Dec23</h3>
+<ul>
+   <li>Added another alternative layout option for 'Bulk Edit Content' - can now show fields in formats: Table, Stacked, Stacked with inline titles, Stacked with title column.</li>
+</ul>
+<br>
+
+
+<h3>Version 1.4.1 - 22Dec23</h3>
+<ul>
+   <li>Added alternative layout options for 'Bulk Edit Content' - can now show fields in formats: Table, Stacked, Stacked with Title Column.</li>
+</ul>
+<br>
+
+
+<h3>Version 1.4 - 18Dec23</h3>
+<ul>
+   <li>Added 'Bulk Edit Content' functionality - select multiple fields that can be edited by selecting multiple pages in the Content Manager and using the 'Bulk Edit Content' option from the bulk content operations.</li>
+   <li>Added 'Content Manager Add-ins' functionality - optionally set input size and recommended length with character count and progress bar for Page Title, Description, or Menu Text.</li>
+</ul>
+<br>
 
 
 <h3>Version 1.3.4 - 24Oct23</h3>

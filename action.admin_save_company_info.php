@@ -8,9 +8,9 @@
 #          see /SEOBoost/lang/LICENCE.txt or <http://www.gnu.org/licenses/>
 #---------------------------------------------------------------------------------------------------
 
-if( !defined('CMS_VERSION') ) exit;
+if ( !defined('CMS_VERSION') ) exit;
 
-if( !$this->CheckPermission(SEOBoost::USE_PERM) ) return;
+if ( !$this->CheckPermission(SEOBoost::USE_PERM) ) return;
 
 // Save Parameters Company Info Tab
 $settings = [

@@ -52,7 +52,7 @@ function SetPageVars ($params) {
             DIRECTORY_SEPARATOR.$curpage->GetPropertyValue('image');
     }
 
-   if ( $mod->GetPreference('useSearchable', true) ) {
+   if ( is_object($mod) && $mod->GetPreference('useSearchable', true) ) {
       $pageVars['searchable'] = $curpage->getPropertyValue('searchable');
    }
 
@@ -103,16 +103,16 @@ function SetPageVars ($params) {
       }
    }
 
-   // set alias
-   $pageVars['county'] = $pageVars['region'];
+    // set alias
+    $pageVars['county'] = $pageVars['region'];
 
-   // create smarty template, vars & output
-   if( is_object($mod) ) {
-      // this template creates a lot of additional pageVar entries scope=global
-      $tpl = $smarty->CreateTemplate( $mod->GetTemplateResource('pageVars_template.tpl'), null, null, $smarty );
-      $tpl->assign('pageVars', $pageVars);
-      $tpl->display();
-   }
+    // create smarty template, vars & output
+    if( is_object($mod) ) {
+        // this template creates a lot of additional pageVar entries scope=global
+        $tpl = $smarty->CreateTemplate( $mod->GetTemplateResource('pageVars_template.tpl'), null, null, $smarty );
+        $tpl->assign('pageVars', $pageVars);
+        $tmp = $tpl->fetch(); // returns the output rather than displaying it - stops leading spaces bug
+    }
 
 }
 
