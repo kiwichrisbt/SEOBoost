@@ -72,11 +72,11 @@ function SetPageVars ($params) {
       $pageVars['pageTitle'] .= " - ".$pageVars['siteName'];
    }
 
-   // get home page keywords
-   $defaultid = $contentops->GetDefaultPageID();
-   $defaultpage = $contentops->LoadContentFromId( $contentops->GetDefaultPageID() );
-   $pageVars['homePageKeywords'] = $defaultpage->Name();
-   $pageVars['homePageKeywords'] = str_replace("|", ",", str_replace(" |", ",", $pageVars['homePageKeywords']));
+    // get home page keywords
+    $defaultid = $contentops->GetDefaultPageID();
+    $defaultpage = $contentops->LoadContentFromId( $contentops->GetDefaultPageID() );
+    $pageVars['homePageKeywords'] = !empty($defaultpage) ? $defaultpage->Name() : '';
+    $pageVars['homePageKeywords'] = str_replace("|", ",", str_replace(" |", ",", $pageVars['homePageKeywords']));
 
    // load all settings from db
    $query = new SEOBoostSettingQuery;

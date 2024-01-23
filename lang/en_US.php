@@ -317,6 +317,13 @@ EOD;
 $lang['changelog'] = <<<'EOD'
 
 
+<h3>Version 1.4.5beta1 - 13Jan24</h3>
+<ul>
+   <li>Bug Fix - pageVars error if default content not set</li>
+</ul>
+<br>
+
+
 <h3>Version 1.4.4 - 09Jan24</h3>
 <ul>
    <li>Bug Fix - stopped pageVars outputting spaces before any frontend output - this also stopped the sitemaps outputting valid xml</li>
