@@ -8,7 +8,7 @@
 #          see /SEOBoost/lang/LICENCE.txt or <http://www.gnu.org/licenses/>
 #---------------------------------------------------------------------------------------------------
 
-if( !defined('CMS_VERSION') ) exit;
+if ( !defined('CMS_VERSION') ) exit;
 
 
 if ( \CMSMS\HookManager::in_hook('Core::ContentPostRender')==false ) {
@@ -92,7 +92,7 @@ try {
 
       case 'pages':
          CMSApp::get_instance()->set_content_type('text/xml');
-         $smarty_data = "{Navigator template='".$template."'}";
+         $smarty_data = "{Navigator show_all='1' template='".$template."'}";
          $smarty->display('eval:'.$smarty_data);
          break;
 

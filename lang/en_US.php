@@ -317,9 +317,17 @@ EOD;
 $lang['changelog'] = <<<'EOD'
 
 
-<h3>Version 1.4.5beta1 - 13Jan24</h3>
+<h3>Version 1.5.1</h3>
 <ul>
-   <li>Bug Fix - pageVars error if default content not set</li>
+    <li>Bug Fix - LISE instances with the same name as another module e.g. LISENews are now listed under XML Sitemaps</li>
+</ul>
+<br>
+
+
+<h3>Version 1.5</h3>
+<ul>
+    <li>IMPORTANT: Change to Pages Sitemap functionality - BR12761 - Pages Sitemap now includes all active pages, previously only pages set to show in the menu were included - thanks to markSt for identifying and the fix.</li> 
+    <li>Bug Fix - pageVars error if default content not set</li>
 </ul>
 <br>
 

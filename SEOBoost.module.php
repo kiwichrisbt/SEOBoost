@@ -33,7 +33,7 @@ $fn = cms_join_path(__DIR__,'function.social.php'); require_once($fn);
 class SEOBoost extends \CMSModule {
 
     const USE_PERM = 'use_seoboost';
-    const MODULE_VERSION = '1.4.4';
+    const MODULE_VERSION = '1.5.1';
 
     const BULK_EDIT_CORE_FIELDS = [
             'core_content_name',     // these are in the content table
@@ -249,9 +249,11 @@ class SEOBoost extends \CMSModule {
          $supported_sitemaps['lise (no instances)'] = ['LISE', '', 0];
       } else {
          foreach ($instances as $instance) { // LISE Instances
-            $name = strtolower(substr( $instance->module_name, 4 ));
-            $url = "sitemap-lise-$name.xml";
-            $supported_sitemaps[$name] = [$instance->module_name, $url, 0];
+            // $name = strtolower(substr( $instance->module_name, 4 ));
+            $module_name = $instance->module_name;
+            $short_name = strtolower(substr( $instance->module_name, 4 ));
+            $url = "sitemap-lise-$short_name.xml";
+            $supported_sitemaps[$module_name] = [$module_name, $url, 0];
          }
       }
       // get all current sitemaps and compared to $supported_sitemaps
